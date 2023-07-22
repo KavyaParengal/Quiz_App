@@ -25,6 +25,7 @@ class _QuizAppState extends State<QuizApp> {
   List<IconData> icon = [];
   int qnNum = 0;
   int count = 0;
+  int count2=0;
 
   String getQuestions() {
     return question[qnNum].questions;
@@ -42,6 +43,7 @@ class _QuizAppState extends State<QuizApp> {
 
   void clearQn() {
     count = 0;
+    count2=0;
     qnNum = 0;
     icon = [];
   }
@@ -57,12 +59,14 @@ class _QuizAppState extends State<QuizApp> {
   void ansQn(bool answer) {
     bool getAnswer = getAnswers();
     if (finishQn()==true) {
-      if (count <= 5) {
+      if (count2 >= 5) {
         openAlertFail();
         clearQn();
-      } else {
+        icon = [];
+      } else if(count>=5){
         openAlertWin();
         clearQn();
+        icon = [];
       }
     } else {
       if (getAnswer == answer) {
@@ -70,6 +74,7 @@ class _QuizAppState extends State<QuizApp> {
         count++;
       } else {
         icon.add(Icons.close);
+        count2++;
       }
       getNextQn();
     }
