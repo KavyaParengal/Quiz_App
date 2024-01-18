@@ -94,7 +94,7 @@ class _QuizAppState extends State<QuizApp> {
               child: Text(
                 getQuestions(),
                 textAlign: TextAlign.center,
-                style: TextStyle(color: Colors.white, fontSize: 21, fontWeight: FontWeight.w600),
+                style: const TextStyle(color: Colors.white, fontSize: 21, fontWeight: FontWeight.w600),
               ),
             ),
             ElevatedButton(
@@ -104,16 +104,16 @@ class _QuizAppState extends State<QuizApp> {
                 });
 
               },
-              child: Text(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green[800],
+                fixedSize: const Size(350, 55),
+              ),
+              child: const Text(
                 'True',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
               ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green[800],
-                fixedSize: Size(350, 55),
-              ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 setState(() {
@@ -121,16 +121,16 @@ class _QuizAppState extends State<QuizApp> {
                 });
 
               },
-              child: Text(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.red[800],
+                fixedSize: const Size(350, 55),
+              ),
+              child: const Text(
                 'False',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Colors.white),
               ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.red[800],
-                fixedSize: Size(350, 55),
-              ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.only(left: 12, right: 12),
               child: Row(
@@ -140,7 +140,7 @@ class _QuizAppState extends State<QuizApp> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
           ],
         ),
       ),
@@ -156,7 +156,7 @@ class _QuizAppState extends State<QuizApp> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('OK', style: TextStyle(fontSize: 25)),
+          child: const Text('OK', style: TextStyle(fontSize: 25)),
         ),
       ],
     ),
@@ -171,7 +171,7 @@ class _QuizAppState extends State<QuizApp> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('OK', style: TextStyle(fontSize: 25)),
+          child: const Text('OK', style: TextStyle(fontSize: 25)),
         ),
       ],
     ),
